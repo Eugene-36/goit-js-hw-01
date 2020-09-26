@@ -1,30 +1,49 @@
-        let credits = 23580;
-        let pricePerDroir = 3000;
-        let totalPrice;
-        let result;
- 
-        let count = prompt('Желаемое количество дроидов');
-        if(count === null) { // Если в prompt была нажата кнопка Cancel, выводит в консоль сообщение 'Отменено пользователем!'.
-            result = "Отменено пользователем!";
-        } else if(isNaN(count[0]) || isNaN(count)) { // Если было введено не число
-            result = "Введите число";
-        } else { // В противном случае, рассчитывает общую цену заказа и сохраняет в переменной totalPrice.
-            totalPrice = pricePerDroir * count;
-        }
- 
-        if(!result) {
-            // Проверяет сможет ли пользователь оплатить заказ:
-            if((credits - totalPrice) <= 0) {  
-                // если сумма к оплате превышает количество кредитов на счету, выводи в консоль сообщение 'Недостаточно средств на счету!'.
-                console.log("Недостаточно средств на счету!");
-            } else {
-                // в противном случае необходимо посчитать остаток кредитов на счету и вывести сообщение.
-                credits = credits - totalPrice;
-                console.log(`Вы купили ${count} дроида, на счету осталось ${credits}`);
-            }
-        } else {
-            console.log(result);
-        }
+const orderPieces = 4;
 
+const credits = 23580;
+const pricePerDroid = 3000;
+const CANCELED_BY_USER = 'Отменено пользователем!';
+const ACCESS_DENIED = 'Недостаточно средств на счету!';
 
+let totalPrice = orderPieces * pricePerDroid; // Write code on this line
+let balanceCredit = credits - totalPrice; // Write code on this line
+let message;
 
+// Write code under this line
+ if(orderPieces === null){
+    message = CANCELED_BY_USER;
+  } else if (orderPieces >= 0 && credits >= totalPrice){
+   message = `Вы купили ${orderPieces} дроидов, на счету осталось ${balanceCredit} кредитов`;
+  } else if(credits < totalPrice){
+    message = ACCESS_DENIED;
+  }
+ console.log(message);
+//если orderPieces равно 4
+// то значение message будет равно
+// 'Вы купили 4 дроидов, на счету осталось 11580 кредитов'
+
+//если orderPieces равно null
+// то значение message будет равно
+// 'Отменено пользователем!'
+
+//если orderPieces равно 10
+// то значение message будет равно
+// 'Недостаточно средств на счету!'
+
+//если orderPieces равно 4
+// то значение message будет равно
+// 'Вы купили 4 дроидов, на счету осталось 11580 кредитов'
+
+//если orderPieces равно null
+// то значение message будет равно
+// 'Отменено пользователем!'
+
+//если orderPieces равно 10
+// то значение message будет равно
+// 'Недостаточно средств на счету!'        
+        
+        
+        
+           
+        
+      
