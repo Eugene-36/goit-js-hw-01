@@ -13,12 +13,12 @@ let message ;
 // console.log(message);
 const name = prompt('Введите пароль')
 
-const name = prompt('Введите пароль');
-if(userPassword === jqueryismyjam){
+// const name = prompt('Введите пароль');
+if(name === 'jqueryismyjam'){
       console.log(ACCESS_IS_ALLOWED);
       message = ACCESS_IS_ALLOWED
 }
- else if(userPassword === null){
+ else if(name === null){
 console.log(CANCELED_BY_USER)
 message = CANCELED_BY_USER
 }

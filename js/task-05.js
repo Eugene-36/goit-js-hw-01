@@ -40,6 +40,7 @@ if (price !==0) { // Write code on this line
 
 console.log(message)
 
+
 // console.log(message);
 
 //если countryName равно "КитаЙ"
